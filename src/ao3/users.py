@@ -28,7 +28,7 @@ class User(object):
 
         authenticity_token = soup.find('input', {'name': 'authenticity_token'})['value']
 
-        req = sess.post('https://archiveofourown.org/user_sessions', params={
+        req = sess.post('https://archiveofourown.org/login', params={
             'authenticity_token': authenticity_token,
             'user_session[login]': username,
             'user_session[password]': password,
